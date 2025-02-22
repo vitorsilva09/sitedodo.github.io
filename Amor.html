@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Minha Namorada</title>
+    <style>
+        body {
+            font-family: "Georgia", serif;
+            text-align: center;
+            background-color: #4B0000;
+            background-image: url('https://www.transparenttextures.com/patterns/hearts.png');
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #8B0000;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        }
+        button {
+            background-color: #C70039;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #900C3F;
+        }
+        #presente {
+            display: none;
+            margin-top: 20px;
+            font-size: 22px;
+            color: #fff;
+        }
+        .gallery img {
+            width: 160px;
+            height: 160px;
+            margin: 8px;
+            border-radius: 15px;
+            border: 3px solid #fff;
+        }
+        .poema, .historia, .curiosidades, .jogo, .musicas {
+            margin-top: 30px;
+            font-size: 20px;
+            color: #fff;
+            text-align: left;
+            padding: 15px;
+            background-color: #600000;
+            border-radius: 10px;
+        }
+        .mensagem {
+            display: none;
+            font-size: 20px;
+            color: #fff;
+            margin-top: 12px;
+        }
+        input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #fff;
+            background-color: #600000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Para a pessoa mais especial do mundo! ❤️</h1>
+        <p>Você ilumina meus dias e enche meu coração de alegria.</p>
+        <button onclick="mostrarPresente()">Clique para ver seu presente 🎁</button>
+        <p id="presente">💖 Você tem todo o meu amor! 💖</p>
+        
+        <div class="gallery">
+            <h2>Nossos Momentos</h2>
+            <img src="b4c818bf-7965-4251-9382-e8edf125ed2e.jpeg" alt="Foto 1">
+            <img src="c33f3bf3-b93b-43df-90aa-0046d7c4e74e.jpeg" alt="Foto 2">
+            <img src="1e0d53de-8d48-47ae-8c84-c2ca1fefac7b.jpeg" alt="Foto 3">
+        </div>
+
+        
+        <div class="poema">
+            <h2>Um Poema para Você</h2>
+            <p>"Em cada sorriso seu, encontro meu lar,<br>
+                Em cada abraço, meu coração a pulsar.<br>
+                És minha estrela, minha inspiração,<br>
+                O amor da minha vida, minha razão."</p>
+        </div>
+        
+        <div class="historia">
+            <h2>Nossa História 💑</h2>
+            <p>Desde o primeiro dia em que nos conhecemos, cada momento tem sido uma nova aventura. Nossa jornada juntos é cheia de amor, cumplicidade e muitos sorrisos. A cada conversa, descobrimos algo novo um sobre o outro, fortalecendo nosso laço e nos tornando ainda mais unidos. Os pequenos gestos, os olhares compartilhados e as risadas espontâneas fazem parte de uma história que só nós dois entendemos. Cada dia ao seu lado é uma nova página escrita com carinho, e eu mal posso esperar para ver o que o futuro nos reserva..</p>
+        </div>
+        
+        <div class="curiosidades">
+            <h2>Curiosidades sobre Nós</h2>
+            <ul>
+                <li>Nosso primeiro encontro foi no parkingshopping canoas, logos após a multifeira</li>
+                <li>Temos gostos musicais muito parecidos </li>
+                <li>Adoramos assistir filmes, desenhos e outras coisas juntos</li>
+            </ul>
+        </div>
+        
+        <div class="musicas">
+            <h2>Nossas Músicas 💿</h2>
+            <p>Aqui estão algumas músicas que marcaram nossa história:</p>
+            <audio controls>
+                <source src="superoara--la-bamba.mp3" type="audio/mp3">
+                Seu navegador não suporta a tag de áudio.
+            </audio>
+            <audio controls>
+                <source src="Turma do Pagode Camisa 10 Ao vivo.mp3" type="audio/mp3">
+                Seu navegador não suporta a tag de áudio.
+            </audio>
+            <audio controls>
+                <source src="01-Exagerado.mp3" type="audio/mp3">
+                Seu navegador não suporta a tag de áudio.
+            </audio>
+        </div>
+        
+        <div class="jogo">
+            <h2>Jogo do Amor 💕</h2>
+            <p>Escolha um número de 1 a 5 e veja uma surpresa especial!</p>
+            <input type="number" id="numeroJogo" min="1" max="5">
+            <button onclick="surpresaJogo()">Revelar Surpresa</button>
+            <p id="resultadoJogo" class="mensagem"></p>
+        </div>
+        
+        <div class="interacao">
+            <h2>Deixe uma Mensagem 💌</h2>
+            <input type="text" id="mensagemInput" placeholder="Escreva algo bonito...">
+            <button onclick="exibirMensagem()">Enviar</button>
+            <p id="mensagemExibida" class="mensagem"></p>
+        </div>
+    </div>
+
+    <script>
+        function mostrarPresente() {
+            document.getElementById('presente').style.display = 'block';
+        }
+        
+        function exibirMensagem() {
+            var mensagem = document.getElementById('mensagemInput').value;
+            var exibir = document.getElementById('mensagemExibida');
+            if (mensagem.trim() !== "") {
+                exibir.textContent = "💖 " + mensagem + " 💖";
+                exibir.style.display = 'block';
+            }
+        }
+
+        function surpresaJogo() {
+            var numero = document.getElementById('numeroJogo').value;
+            var resultado = document.getElementById('resultadoJogo');
+            var mensagens = [
+                "Você ganhou um beijo virtual! 😘",
+                "Um abraço apertado para você! 🤗",
+                "Que tal um jantar romântico? 🍽️",
+                "Eu te amo mais que tudo! ❤️",
+                "Surpresa especial: um dia cheio de carinho! 💕"
+            ];
+            if (numero >= 1 && numero <= 5) {
+                resultado.textContent = mensagens[numero - 1];
+                resultado.style.display = 'block';
+            } else {
+                resultado.textContent = "Escolha um número entre 1 e 5!";
+                resultado.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
